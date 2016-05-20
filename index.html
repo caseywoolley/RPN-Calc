@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>RPN Calculator</title>
+		<script type="text/javascript" src="rpnCalc.js"></script>
+	</head>
+	<body>
+
+    <form id="form">
+  		<input id="input" type="text"></input>
+  		<button id="enter" type="submit">Enter</button>
+    </form>
+		<div id="output">0<div>
+	
+		<script>
+      var rpn = new RPNCalc();
+			var $input = document.getElementById('input');
+			var $output = document.getElementById('output');
+			var $enter = document.getElementById("enter");
+
+			$enter.addEventListener("click", function(e) {
+        e.preventDefault();
+				$output.innerHTML = rpn($input.value);
+				$input.value = '';
+			});
+		</script>
+	</body>
+</html>
